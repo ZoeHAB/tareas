@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Montserrat&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* BODY */
+
+body {
+    display: flex;
+    flex-direction: column;
+    /*    grid-auto-columns: 5rem, 1fr;
+    grid-template-areas: 'header', 'main'; */
+    align-items: center;
+    --color-principal: rgb(206, 167, 238);
+    --color-oscuro: rgb(142, 14, 146);
+    background: var(--color-principal);
+    padding: 1rem;
+    height: 100vh;
+    max-height: 100vh;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* ELEMENTOS PRINCIPALES */
+header,
+main {
+    max-width: 600px;
+    padding: 2rem;
+    background: white;
+    width: 100%;
+    text-align: center;
+    border-radius: 2rem;
+}
+header {
+    margin-bottom: 1rem;
+    grid-area: header;
+    font-family: 'Architects Daughter', cursive;
+    color: var(--color-oscuro);
+}
+
+main {
+    max-height: 100%;
+    grid-area: main;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    flex-grow: 1;
+}
+
+/* FORMULARIO */
+
+form {
+    grid-area: form;
+}
+
+fieldset {
+    border: none;
+    margin-bottom: 0.5rem;
+}
+
+fieldset input {
+    border: 2px solid var(--color-principal);
+    border-radius: 5px;
+    padding: 0.3rem;
+}
+
+fieldset input:focus {
+    outline: none;
+    border-color: var(--color-oscuro);
+}
+
+form button {
+    background: var(--color-oscuro);
+    background: linear-gradient(var(--color-principal) 0%, var(--color-oscuro) 100%);
+    color: white;
+    font-weight: bold;
+    padding: 0.3rem;
+    border-radius: 0.5rem;
+    border-color: var(--color-oscuro);
+    outline: none;
+}
+
+form button:active {
+    background: linear-gradient(var(--color-oscuro) 0%, var(--color-principal) 100%);
+}
+
+/* LISTA */
+
+ul {
+    list-style: none;
+    margin-top: 1rem;
+    grid-area: lista;
+    height: 85%;
+    min-height: 85%;
+    flex-grow: 1;
+    overflow: auto;
+    margin-bottom: 2rem;
+}
+
+li {
+    text-align: left;
+    border-top: 1px solid var(--color-principal);
+    padding: 0.5rem;
+}
+
+li > * {
+    display: inline-block;
+}
+
+li > input {
+    margin-right: 0.5rem;
+}
+
+li.done p {
+    text-decoration: line-through;
+}
+
+/* BARRA SCROLL */
+
+/* Works on Firefox */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-principal);
+}
+
+/* Works on Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+    width: 15px;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: var(--color-principal);
+    border: 3px solid rgb(255, 255, 255);
+    border-radius: 20px;
+}
